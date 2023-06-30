@@ -1,0 +1,73 @@
+.about-project{
+  margin: 0 auto;
+  padding: 90px 0;
+  max-width: 1140px;
+}
+
+.about-project__intro {
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #DADADA;
+}
+
+.about-project__description {
+  padding: 70px 0 110px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-project__subtitle {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 26px;
+}
+
+.about-project__details {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.about-project__timeframe {
+  display: grid;
+  grid-template-columns: minmax(100px, 25%) 1fr;
+  grid-template-rows : auto;
+  justify-items: stretch;
+  text-align: center;
+}
+
+.about-project__sprint {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding: 9px;
+  box-sizing: border-box;
+}
+
+.about-project__sprint_1 {
+  background-color: #3DDC84;
+  color: black;
+}
+
+.about-project__sprint_2 {
+  background-color: #303030;
+  color: white;
+}
+
+.about-project__caption {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #A0A0A0;
+  margin: 0;
+  padding: 14px 9px 0;
+}

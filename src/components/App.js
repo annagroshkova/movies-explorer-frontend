@@ -52,14 +52,7 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={
-              <ProtectedRoute
-                loggedIn={token}
-                element={Home}
-                onLogout={handleLogout}
-                onSetCurrentUser={setCurrentUser}
-              />
-            }
+            element={<Home/>}
           />
           <Route
             path="/sign-in"

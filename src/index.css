@@ -1,6 +1,10 @@
 @import './vendor/normalize.css';
 @import './vendor/fonts/inter.css';
 @import './blocks/body/body.css';
+@import './blocks/home/home.css';
+@import './blocks/hero/hero.css';
+@import './blocks/about-project/about-project.css';
+@import './blocks/technologies/technologies.css';
 @import './blocks/header/header.css';
 @import './blocks/header/__link/header__link.css';
 @import './blocks/header/__link/_grey/header__link_grey.css';

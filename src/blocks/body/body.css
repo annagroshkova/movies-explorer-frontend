@@ -1,5 +1,8 @@
 .body {
+  padding: 0 70px;
+  margin: 0 auto;
   min-height: 100vh;
-  background-color: black;
+  background-color: #202020;
   font-family: 'Inter', Arial, sans-serif;
+  color: white;
 }
