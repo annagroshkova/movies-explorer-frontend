@@ -1,11 +1,42 @@
 .footer {
-  max-width: 880px;
-  padding: 0 19px 36px 19px;
+  padding: 80px 0 20px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
-@media screen and (min-width: 918px) {
-  .footer {
-    padding-bottom: 60px;
-  }
+.footer__title {
+  color: #8B8B8B;
+  font-weight: 400;
+  font-size: 13px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #424242;
+}
+
+.footer__content {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__current-year {
+  color: white;
+  font-weight: 400;
+  font-size: 13px;
+  margin: 0;
+}
+
+.footer__links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
 }

@@ -5,6 +5,7 @@
 @import './blocks/hero/hero.css';
 @import './blocks/about-project/about-project.css';
 @import './blocks/technologies/technologies.css';
+@import './blocks/about/about.css';
 @import './blocks/header/header.css';
 @import './blocks/header/__link/header__link.css';
 @import './blocks/header/__link/_grey/header__link_grey.css';
@@ -32,7 +33,6 @@
 @import './blocks/element/__like-button/_active/element__like-button_active.css';
 @import './blocks/element/__trash-icon/element__trash-icon.css';
 @import './blocks/footer/footer.css';
-@import './blocks/footer/__text/footer__text.css';
 @import './blocks/popup/popup.css';
 @import './blocks/popup/_image-preview/popup_image-preview.css';
 @import './blocks/popup/__image-container/popup__image-container.css';

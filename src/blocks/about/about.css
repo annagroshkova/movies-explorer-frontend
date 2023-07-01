@@ -1,0 +1,101 @@
+.about {
+  margin: 0 auto;
+  padding: 110px 0 125px;
+  max-width: 1140px;
+}
+
+.about__intro {
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #DADADA;
+}
+
+.about__info {
+  padding: 66px 0 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about__avatar {
+  height: 327px;
+}
+
+.about__name {
+  padding-bottom: 18px;
+  margin: 0;
+  color: white;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+}
+
+.about__summary {
+  margin: 0;
+  padding-bottom: 26px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.about__description {
+  flex-grow: 10;
+  margin: 0;
+  padding-bottom: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  max-width: 600px;
+}
+
+.about__github-link {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.about__portfolio {
+  font-size: 18px;
+  font-weight: 400;
+  color: #8B8B8B;
+  padding-bottom: 50px;
+  margin: 0;
+}
+
+.about__portfolio-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about__portfolio-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #424242;
+}
+
+.about__portfolio-name {
+  color: white;
+  font-weight: 400;
+  font-size: 30px;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.about__portfolio-link-icon {
+  width: 29px;
+}
