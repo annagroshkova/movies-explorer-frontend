@@ -30,6 +30,13 @@
   height: 327px;
 }
 
+@media screen and (max-width: 768px) {
+  .about__avatar {
+    height: 307px;
+  }
+}
+
+
 .about__name {
   padding-bottom: 18px;
   margin: 0;

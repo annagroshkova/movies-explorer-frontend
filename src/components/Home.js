@@ -10,7 +10,7 @@ export default  function Home() {
   return (
     <div className="home">
       <Hero />
-      {/*<AboutProject />*/}
+      <AboutProject />
       {/*<Techs />*/}
       {/*<About />*/}
       {/*<Footer />*/}

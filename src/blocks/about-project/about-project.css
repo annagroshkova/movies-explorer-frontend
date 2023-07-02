@@ -1,8 +1,21 @@
 .about-project{
   margin: 0 auto;
-  padding: 90px 0;
+  padding: 90px 0 110px;
   max-width: 1140px;
 }
+
+@media screen and (max-width: 768px) {
+  .about-project {
+    padding-bottom: 90px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-project {
+    padding: 70px 0;
+  }
+}
+
 
 .about-project__intro {
   color: white;
@@ -16,6 +29,13 @@
 @media screen and (max-width: 768px) {
   .about-project__intro {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__intro {
+    font-size: 18px;
+    padding-bottom: 28px;
   }
 }
 
@@ -33,6 +53,14 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .about-project__description {
+    padding: 60px 0;
+    flex-direction: column;
+    gap: 56px;
+  }
+}
+
 .about-project__subtitle {
   margin: 0;
   color: white;
@@ -44,6 +72,13 @@
 @media screen and (max-width: 768px) {
   .about-project__subtitle {
     padding-bottom: 22px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__subtitle {
+    padding-bottom: 16px;
+    font-size: 18px;
   }
 }
 
@@ -62,6 +97,14 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .about-project__details {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+
 
 .about-project__timeframe {
   display: grid;
@@ -78,6 +121,13 @@
   margin: 0;
   padding: 9px 0;
 }
+
+@media screen and (max-width: 425px) {
+  .about-project__sprint {
+    font-size: 11px;
+  }
+}
+
 
 .about-project__sprint_1 {
   background-color: #3DDC84;
@@ -96,4 +146,11 @@
   color: #A0A0A0;
   margin: 0;
   padding: 14px 9px 0;
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__caption {
+    font-size: 11px;
+    padding-top: 10px;
+  }
 }
