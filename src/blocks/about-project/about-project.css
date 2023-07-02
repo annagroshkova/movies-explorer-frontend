@@ -13,11 +13,24 @@
   border-bottom: 1px solid #DADADA;
 }
 
+@media screen and (max-width: 768px) {
+  .about-project__intro {
+    font-size: 20px;
+  }
+}
+
 .about-project__description {
   padding: 70px 0 110px;
   display: flex;
   justify-content: space-between;
   gap: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project__description {
+    padding-bottom: 93px;
+    gap: 30px;
+  }
 }
 
 .about-project__subtitle {
@@ -28,6 +41,12 @@
   padding-bottom: 26px;
 }
 
+@media screen and (max-width: 768px) {
+  .about-project__subtitle {
+    padding-bottom: 22px;
+  }
+}
+
 .about-project__details {
   margin: 0;
   color: white;
@@ -36,9 +55,17 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 768px) {
+  .about-project__details {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+
 .about-project__timeframe {
   display: grid;
-  grid-template-columns: minmax(100px, 25%) 1fr;
+  grid-template-columns: minmax(min-content, 25%) 1fr;
   grid-template-rows : auto;
   justify-items: stretch;
   text-align: center;
@@ -49,8 +76,7 @@
   font-size: 14px;
   font-weight: 400;
   margin: 0;
-  padding: 9px;
-  box-sizing: border-box;
+  padding: 9px 0;
 }
 
 .about-project__sprint_1 {

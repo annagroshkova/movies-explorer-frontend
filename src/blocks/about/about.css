@@ -39,6 +39,12 @@
   line-height: 58px;
 }
 
+@media screen and (max-width: 768px) {
+  .about__name {
+    font-size: 40px;
+  }
+}
+
 .about__summary {
   margin: 0;
   padding-bottom: 26px;
@@ -46,6 +52,13 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .about__summary {
+    font-size: 12px;
+    line-height: 18px;
+  }
 }
 
 .about__description {
@@ -56,6 +69,13 @@
   font-weight: 400;
   line-height: 22px;
   max-width: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .about__description {
+    font-size: 12px;
+    line-height: 18px;
+  }
 }
 
 .about__github-link {
@@ -96,6 +116,18 @@
   margin: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .about__portfolio-name {
+    font-size: 28px;
+  }
+}
+
 .about__portfolio-link-icon {
   width: 29px;
+}
+
+@media screen and (max-width: 768px) {
+  .about__portfolio-link-icon {
+    width: 27px;
+  }
 }

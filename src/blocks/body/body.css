@@ -12,3 +12,9 @@
     padding: 0 50px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .body {
+    padding: 0 18px;
+  }
+}
