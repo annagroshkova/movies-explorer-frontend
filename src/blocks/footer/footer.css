@@ -14,11 +14,24 @@
   border-bottom: 1px solid #424242;
 }
 
+@media screen and (max-width: 425px) {
+  .footer__title {
+    font-size: 12px;
+  }
+}
+
 .footer__content {
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__content {
+    flex-direction: column-reverse;
+    padding-top: 30px;
+  }
 }
 
 .footer__current-year {
@@ -28,9 +41,25 @@
   margin: 0;
 }
 
+@media screen and (max-width: 425px) {
+  .footer__current-year {
+    color: #8B8B8B;
+    font-size: 12px;
+  }
+}
+
 .footer__links {
   display: flex;
   gap: 20px;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 30px;
+  }
 }
 
 .footer__link {
