@@ -1,6 +1,19 @@
 .main {
-  max-width: 880px;
-  padding: 0 19px;
-  box-sizing: content-box;
+
+  max-width: 1140px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main {
+    width: calc(100% + 8px);
+    margin-left: -4px;
+  }
 }

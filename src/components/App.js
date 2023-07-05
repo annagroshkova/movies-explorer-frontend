@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import ProtectedRoute from './ProtectedRoute';
 import { getToken, removeToken, saveToken } from '../utils/storage';
 import { api } from '../utils/api';
+import Main from "./Main";
 
 export default function App() {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home/>}
+            element={<Main/>}
           />
           <Route
             path="/sign-in"

@@ -18,21 +18,21 @@ export  default function About() {
       </div>
       <p className="about__portfolio">Портфолио</p>
       <ul className="about__portfolio-list">
-        <li>
+        <li className="about__portfolio-item">
           <a className="about__portfolio-link" href="#">
             <p className="about__portfolio-name">Статичный сайт</p>
             <img className="about__portfolio-link-icon" src={linkIcon}/>
           </a>
         </li>
 
-        <li>
+        <li className="about__portfolio-item">
           <a className="about__portfolio-link" href="#">
             <p className="about__portfolio-name">Адаптивный сайт</p>
             <img className="about__portfolio-link-icon" src={linkIcon}/>
           </a>
         </li>
 
-        <li>
+        <li className="about__portfolio-item">
           <a className="about__portfolio-link" href="#">
             <p className="about__portfolio-name">Одностраничное приложение</p>
             <img className="about__portfolio-link-icon" src={linkIcon}/>
