@@ -160,6 +160,11 @@
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
+  transition: opacity .3s ease-out;
+}
+
+.about__github-link:hover {
+  opacity: .7;
 }
 
 .about__portfolio {
@@ -198,6 +203,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  transition: opacity .3s ease-out;
+}
+
+.about__portfolio-link:hover {
+  opacity: .7;
 }
 
 .about__portfolio-name {

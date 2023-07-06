@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="hero__container">
 
         <div className="hero__header">
-          <img className="hero__logo" src={logo} />
+          <img className="hero__logo" src={logo} alt="Логотип сайта" />
           <div className="hero__links">
             <a className="hero__link hero__link_type_clear" href="#">Регистрация</a>
             <a className="hero__link hero__link_type_filled" href="#">Войти</a>
@@ -23,7 +23,7 @@ export default function Hero() {
             <p className="hero__subtitle">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
             <a className="hero__info-link" href="#">Узнать больше</a>
           </div>
-          <img className="hero__promo-image" src={promoImage} />
+          <img className="hero__promo-image" src={promoImage} alt="Иллюстрация глобуса"/>
         </div>
 
       </div>

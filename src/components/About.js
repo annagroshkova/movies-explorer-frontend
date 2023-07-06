@@ -14,28 +14,31 @@ export  default function About() {
             и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.</p>
           <a className="about__github-link" href="#">Github</a>
         </div>
-        <img className="about__avatar" src={me} />
+        <img className="about__avatar" src={me} alt="Фото студента"/>
       </div>
       <p className="about__portfolio">Портфолио</p>
       <ul className="about__portfolio-list">
         <li className="about__portfolio-item">
           <a className="about__portfolio-link" href="#">
             <p className="about__portfolio-name">Статичный сайт</p>
-            <img className="about__portfolio-link-icon" src={linkIcon}/>
+            <img className="about__portfolio-link-icon" src={linkIcon} alt="Переход по ссылке
+"/>
           </a>
         </li>
 
         <li className="about__portfolio-item">
           <a className="about__portfolio-link" href="#">
             <p className="about__portfolio-name">Адаптивный сайт</p>
-            <img className="about__portfolio-link-icon" src={linkIcon}/>
+            <img className="about__portfolio-link-icon" src={linkIcon} alt="Переход по ссылке
+"/>
           </a>
         </li>
 
         <li className="about__portfolio-item">
           <a className="about__portfolio-link" href="#">
             <p className="about__portfolio-name">Одностраничное приложение</p>
-            <img className="about__portfolio-link-icon" src={linkIcon}/>
+            <img className="about__portfolio-link-icon" src={linkIcon} alt="Переход по ссылке
+"/>
           </a>
         </li>
       </ul>

@@ -68,4 +68,9 @@
   cursor: pointer;
   font-size: 13px;
   font-weight: 400;
+  transition: opacity .3s ease-out;
+}
+
+.footer__link:hover {
+  opacity: .7;
 }
