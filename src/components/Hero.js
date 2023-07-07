@@ -18,12 +18,12 @@ export default function Hero() {
         </div>
 
         <div className="hero__promo">
+          <img className="hero__promo-image" src={promoImage} alt="Иллюстрация глобуса"/>
           <div className="hero__info">
             <h1 className="hero__title">Учебный проект студента факультета Веб-разработки.</h1>
             <p className="hero__subtitle">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
             <a className="hero__info-link" href="#">Узнать больше</a>
           </div>
-          <img className="hero__promo-image" src={promoImage} alt="Иллюстрация глобуса"/>
         </div>
 
       </div>
