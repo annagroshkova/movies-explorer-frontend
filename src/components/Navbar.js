@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className={open ? "header__menu-container header__menu-container_active" : "header__menu-container"}>
           <button className="header__close-btn" onClick={toggleOpen}><img className="header__close-icon" src={closeIcon} alt="Иконка крестик"/></button>
           <div className="header__links">
-            <a className="header__link header__main-page-link" href="#">Главная</a>
+            <a className="header__link" href="#">Главная</a>
             <a className="header__link" href="#">Фильмы</a>
             <a className="header__link" href="#">Сохранённые фильмы</a>
             <a className="header__link header__profile-link" href="#">

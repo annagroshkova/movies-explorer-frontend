@@ -39,6 +39,10 @@
   font-size: 10px;
 }
 
+.hero__link:active {
+  background: none;
+}
+
 
 .hero__link_type_clear {
   color: white;
@@ -174,7 +178,6 @@
     width: unset;
     margin: 0;
   }
-
 
   .hero__link {
     font-size: 12px;

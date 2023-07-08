@@ -7,8 +7,9 @@
 @import './blocks/technologies/technologies.css';
 @import './blocks/about-me/about-me.css';
 @import './blocks/header/header.css';
-@import './blocks/navbar/navbar.css';
 @import './blocks/main/main.css';
+@import './blocks/search-bar/search-bar.css';
+@import './blocks/checkbox/checkbox.css';
 @import './blocks/profile/profile.css';
 @import './blocks/profile/__image-container/profile__image-container.css';
 @import './blocks/profile/__avatar/profile__avatar.css';
