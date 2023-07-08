@@ -13,7 +13,6 @@ export default function SearchBar() {
         <p className="search__checkbox-label">Короткометражки</p>
         <Checkbox />
       </div>
-      <div className="search__underline"></div>
     </section>
   )
 }
