@@ -10,8 +10,10 @@ export default function Checkbox(props) {
   }
 
   return (
-    <div className={`checkbox ${checked ? "checkbox_checked" : ""}`} role="button" onClick={handleClick}>
-      <div className={`checkbox__slider ${checked ? "checkbox__slider_checked" : ""}`}></div>
+    <div>
+      <div className={`checkbox ${checked ? "checkbox_checked" : ""}`} role="button" onClick={handleClick}>
+        <div className={`checkbox__slider ${checked ? "checkbox__slider_checked" : ""}`}></div>
+      </div>
     </div>
   )
 }

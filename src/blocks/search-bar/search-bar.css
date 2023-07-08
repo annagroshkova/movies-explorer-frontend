@@ -1,5 +1,62 @@
 .search {
   display: flex;
   flex-direction: column;
+  padding: 60px 0 10px;
+}
 
+.search__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  padding: 7px 7px 7px 16px;
+  border: 1px solid rgba(170, 170, 170, .2);
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+.search__input{
+  flex-grow: 5;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 11px;
+  outline: none;
+}
+
+.search__input::placeholder {
+  color: #8B8B8B;
+  font-size: 11px;
+}
+
+.search__submit-btn {
+  color: white;
+  font-weight: 400;
+  font-size: 11px;
+  padding: 8px 10px;
+  background-color: #4285F4;
+  border-radius: 48px;
+  border: none;
+}
+
+.search__checkbox-container {
+  padding: 44px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search__checkbox-label {
+  color: white;
+  font-weight: 400;
+  font-size: 11px;
+  margin: 0;
+  padding-right: 13px;
+}
+
+.search__underline {
+  height: 1px;
+  background-color: rgba(170, 170, 170, .2);
+  width: 100%;
 }

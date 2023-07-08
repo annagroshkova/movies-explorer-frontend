@@ -19,7 +19,7 @@ export default function Navbar() {
       <button className="header__menu-btn" onClick={toggleOpen}><img className="header__menu-icon" src={headerMenuIcon} alt="Иконка меню"/></button>
       {(open) && (<div className="header__overlay"></div>)}
       {(open || isDesktop) && (
-        <div className={open ? "header__menu-container header__menu-container_active" : "header__menu-container"}>
+        <div className={`header__menu-container ${open ? "header__menu-container_active" : ""}`}>
           <button className="header__close-btn" onClick={toggleOpen}><img className="header__close-icon" src={closeIcon} alt="Иконка крестик"/></button>
           <div className="header__links">
             <a className="header__link" href="#">Главная</a>

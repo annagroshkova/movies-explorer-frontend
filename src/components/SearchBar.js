@@ -5,8 +5,12 @@ import Checkbox from "./Checkbox";
 export default function SearchBar() {
   return (
     <section className="search">
-      <input className="search__input" type="search"/>
-      <div className="search__checkbox">
+      <form className="search__form">
+        <input className="search__input" type="search" placeholder="Фильм"/>
+        <button className="search__submit-btn">Найти</button>
+      </form>
+      <div className="search__checkbox-container">
+        <p className="search__checkbox-label">Короткометражки</p>
         <Checkbox />
       </div>
       <div className="search__underline"></div>
