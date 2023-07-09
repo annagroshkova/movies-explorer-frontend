@@ -42,6 +42,11 @@
   background-color: #4285F4;
   border-radius: 48px;
   border: none;
+  transition: background-color .2s ease-out;
+}
+
+.search__submit-btn:hover {
+  background-color: #5b92f5;
 }
 
 .search__checkbox-container {
