@@ -55,11 +55,4 @@
 @import './blocks/popup/__close-button/popup__close-button.css';
 @import './blocks/popup/__icon/popup__icon.css';
 @import './blocks/register/register.css';
-@import './blocks/register/__container/register__container.css';
-@import './blocks/register/__form/register__form.css';
-@import './blocks/register/__heading/register__heading.css';
-@import './blocks/register/__info/register__info.css';
-@import './blocks/register/__input/register__input.css';
-@import './blocks/register/__submit-button/register__submit-button.css';
-@import './blocks/register/__undertext/register__undertext.css';
-@import './blocks/register/__login-link/register__login-link.css';
+@import './blocks/greeting/greeting.css';

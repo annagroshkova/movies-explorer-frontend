@@ -53,7 +53,7 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={<Main/>}
+            element={<Register/>}
           />
           <Route
             path="/sign-in"
