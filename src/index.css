@@ -54,5 +54,6 @@
 @import './blocks/popup/__submit-button/_disabled/popup__submit-button_disabled.css';
 @import './blocks/popup/__close-button/popup__close-button.css';
 @import './blocks/popup/__icon/popup__icon.css';
-@import './blocks/register/register.css';
+@import './blocks/sign/sign.css';
+@import './blocks/input/input.css';
 @import './blocks/greeting/greeting.css';
