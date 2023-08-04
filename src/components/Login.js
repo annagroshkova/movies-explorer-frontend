@@ -1,67 +1,43 @@
-import Header from './Header';
-import { auth } from '../utils/auth';
-import { useForm } from '../hooks/useForm';
-import InfoTooltip from './InfoTooltip';
-import { useState } from 'react';
+import React from "react"
+import Greeting from "./Greeting";
+import Input from "./Input";
+import SubmitButton from "./SubmitButton";
 
-export default function Login(props) {
-  const [tooltipOpen, setTooltipOpen] = useState(false);
-  const { values, handleChange } = useForm({
-    email: '',
-    password: '',
-    // email: 'anna.matvyeyenko@gmail.com',
-    // password: '12345678',
-  });
+export default function Login() {
 
-  function handleSubmit(ev) {
-    ev.preventDefault();
-
-    auth
-      .signin(values)
-      .then((res) => {
-        props.onLogin(res);
-      })
-      .catch((err) => {
-        console.error(err);
-        setTooltipOpen(true);
-      });
-  }
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   return (
-    <div className="register">
-      <Header linkUrl="/sign-up" linkText="Регистрация" />
+    <div className="sign">
+      <Greeting text="Рады видеть!"/>
+      <form className="sign__form">
+        <fieldset className="sign__fieldset">
 
-      <div className="register__container">
-        <h3 className="register__heading">Вход</h3>
-        <form className="register__form" name="register-form" onSubmit={handleSubmit}>
-          <fieldset className="register__info">
-            <input
-              className="register__input register__input_type_email"
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={values.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              className="register__input register__input_type_password"
-              type="password"
-              name="password"
-              placeholder="Пароль"
-              value={values.password}
-              onChange={handleChange}
-              required
-            />
-          </fieldset>
-          <button className="register__submit-button" type="submit">
-            Войти
-          </button>
-        </form>
-        <p className="register__undertext">&nbsp;</p>
-      </div>
+          <Input label="E-mail"
+                 id="email"
+                 name="email"
+                 type="email"
+                 defaultValue={email}
+                 onChange={setEmail}
+                 required={true}
+          />
 
-      <InfoTooltip isOpen={tooltipOpen} isSuccess={false} onClose={() => setTooltipOpen(false)} />
+          <Input label="Пароль"
+                 id="password"
+                 name="password"
+                 type="password"
+                 defaultValue={password}
+                 onChange={setPassword}
+                 required={true}
+          />
+        </fieldset>
+
+        <SubmitButton text="Войти" />
+        <p className="sign__text">Ещё не зарегистрированы? <a className="sign__link" href="/">Регистрация</a></p>
+
+      </form>
     </div>
-  );
+  )
+
 }

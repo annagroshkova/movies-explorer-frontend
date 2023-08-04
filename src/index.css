@@ -13,15 +13,6 @@
 @import './blocks/movies/movies.css';
 @import './blocks/movie/movie.css';
 @import './blocks/profile/profile.css';
-@import './blocks/profile/__image-container/profile__image-container.css';
-@import './blocks/profile/__avatar/profile__avatar.css';
-@import './blocks/profile/__avatar-edit-button/profile__avatar-edit-button.css';
-@import './blocks/profile/__info/profile__info.css';
-@import './blocks/profile/__name/profile__name.css';
-@import './blocks/profile/__name-text/profile__name-text.css';
-@import './blocks/profile/__description/profile__description.css';
-@import './blocks/profile/__edit-button/profile__edit-button.css';
-@import './blocks/profile/__add-button/profile__add-button.css';
 @import './blocks/elements/elements.css';
 @import './blocks/element/element.css';
 @import './blocks/element/__image/element__image.css';

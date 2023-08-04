@@ -2,12 +2,14 @@ import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
 import Register from './Register';
+import Profile from './Profile';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { useEffect, useState } from 'react';
 import ProtectedRoute from './ProtectedRoute';
 import { getToken, removeToken, saveToken } from '../utils/storage';
 import { api } from '../utils/api';
 import Main from "./Main";
+import MoviesCardList from "./MoviesCardList";
 
 export default function App() {
   const navigate = useNavigate();
@@ -53,7 +55,7 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={<Register/>}
+            element={<Profile />}
           />
           <Route
             path="/sign-in"

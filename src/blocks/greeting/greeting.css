@@ -1,5 +1,5 @@
 .greeting {
-  padding: 56px 0 80px;
+  padding-bottom: 80px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -23,14 +23,9 @@
 @media screen and (min-width: 425px) {
   .greeting {
     align-items: flex-start;
-    padding: 232px 0 40px;
+    padding-bottom: 40px;
     gap: 40px;
   }
 }
 
-@media screen and (min-width: 769px) {
-  .greeting {
-    padding-top: 70px;
-  }
-}
 
