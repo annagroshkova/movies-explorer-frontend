@@ -26,7 +26,7 @@ export default function Navbar() {
             className={navLinkClassName}
             to="/home"
           >Фильмы</NavLink>
-          <NavLink className={navLinkClassName} to="/favorites">Сохранённые фильмы</NavLink>
+          <NavLink className={navLinkClassName} to="/saved">Сохранённые фильмы</NavLink>
           <NavLink className={props => `${navLinkClassName(props)} navbar__profile-link`} to="/profile">
             <p className="navbar__profile-text" >Аккаунт</p>
             <img className="navbar__profile-icon" src={profileIcon} alt="Иконка профиля"/>
