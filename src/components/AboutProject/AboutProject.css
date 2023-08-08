@@ -1,0 +1,151 @@
+.about-project {
+  margin: 0 auto;
+  padding: 70px 0;
+  max-width: 1140px;
+}
+
+.about-project__intro {
+  color: white;
+  font-weight: 400;
+  margin: 0;
+  border-bottom: 1px solid #DADADA;
+  font-size: 18px;
+  padding-bottom: 28px;
+}
+
+.about-project__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 56px;
+  padding: 60px 0;
+}
+
+.about-project__info-block {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: auto;
+  grid-row-gap: 16px;
+}
+
+.about-project__subtitle {
+  margin: 0;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.about-project__details {
+  margin: 0;
+  color: white;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+
+.about-project__timeframe {
+  display: grid;
+  grid-template-columns: minmax(min-content, 25%) 1fr;
+  grid-template-rows : auto;
+  grid-row-gap: 10px;
+  justify-items: stretch;
+  text-align: center;
+}
+
+.about-project__sprint {
+  width: 100%;
+  margin: 0;
+  padding: 9px 0;
+  font-weight: 400;
+  font-size: 11px;
+}
+
+.about-project__sprint_1 {
+  background-color: #3DDC84;
+  color: black;
+}
+
+.about-project__sprint_2 {
+  background-color: #303030;
+  color: white;
+}
+
+.about-project__caption {
+  font-size: 11px;
+  font-weight: 400;
+  color: #A0A0A0;
+  margin: 0;
+  padding-inline: 9px;
+}
+
+
+@media screen and (min-width: 426px){
+
+  .about-project {
+    padding-inline: 20px;
+  }
+
+  .about-project__intro {
+    font-size: 20px;
+  }
+
+  .about-project {
+    padding-bottom: 90px;
+  }
+
+  .about-project__description {
+    flex-direction: row;
+    padding-bottom: 93px;
+    gap: 30px;
+  }
+
+  .about-project__info-block{
+    grid-row-gap: 22px;
+  }
+
+  .about-project__details {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-project__timeframe {
+    grid-row-gap: 14px;
+  }
+
+  .about-project__sprint {
+    font-size: 14px;
+  }
+
+  .about-project__caption {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (min-width: 769px) {
+
+  .about-project{
+    padding: 110px 0;
+  }
+
+  .about-project__intro {
+    font-size: 22px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #DADADA;
+  }
+
+  .about-project__description {
+    padding: 70px 0 110px;
+    gap: 40px;
+  }
+
+  .about-project__info-block{
+    grid-row-gap: 26px;
+  }
+
+  .about-project__details {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
