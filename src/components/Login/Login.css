@@ -27,6 +27,9 @@
   font-weight: 500;
 }
 
+.sign__submit-button:disabled {
+}
+
 .sign__fieldset {
   margin: 0;
   flex-grow: 10;

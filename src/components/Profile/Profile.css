@@ -49,6 +49,11 @@
   background-color: transparent;
   border: none;
   flex-grow: 10;
+  outline: none;
+}
+
+.profile__input-field:focus {
+  font-weight: 500;
 }
 
 .profile__line {

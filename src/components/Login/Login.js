@@ -35,7 +35,7 @@ export default function Login() {
           />
         </fieldset>
 
-        <SubmitButton text="Войти" />
+        <SubmitButton text="Войти" disabled={true} />
         <p className="sign__text">Ещё не зарегистрированы? <Link className="sign__link" to="/register">Регистрация</Link></p>
 
       </form>

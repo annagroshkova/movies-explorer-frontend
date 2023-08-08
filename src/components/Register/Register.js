@@ -7,8 +7,8 @@ import {Link} from "react-router-dom";
 
 export default function Register() {
 
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  const [name, setName] = React.useState("Anna");
+  const [email, setEmail] = React.useState("anna.matvyeyenko@gmail.com");
   const [password, setPassword] = React.useState("");
 
   return (
@@ -41,10 +41,12 @@ export default function Register() {
                  defaultValue={password}
                   onChange={setPassword}
                  required={true}
+                 minLength={8}
+                 error="Что-то пошло не так..."
           />
         </fieldset>
 
-        <SubmitButton text="Зарегистрироваться" />
+        <SubmitButton text="Зарегистрироваться" disabled={true} />
         <p className="sign__text">Уже зарегистрированы? <Link className="sign__link" to="/login">Войти</Link></p>
 
       </form>

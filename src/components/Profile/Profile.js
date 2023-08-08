@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import "./Profile.css"
 
 export default function Profile() {
-
+  const [edit, setEdit] = React.useState(false);
 
   return (
     <div className="profile">
@@ -19,6 +19,7 @@ export default function Profile() {
               name="name"
               type="text"
               defaultValue="Анна"
+              disabled={!edit}
             />
           </div>
 
@@ -32,11 +33,12 @@ export default function Profile() {
               name="email"
               type="email"
               defaultValue="anna.matvyeyenko@gmail.com"
+              disabled={!edit}
             />
           </div>
         </form>
         <div className="profile__buttons">
-          <button className="profile__button profile__button_type_edit">Редактировать</button>
+          <button className="profile__button profile__button_type_edit" onClick={() => setEdit(true)}>Редактировать</button>
           <button className="profile__button profile__button_type_exit">Выйти из аккаунта</button>
         </div>
       </div>
