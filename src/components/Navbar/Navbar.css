@@ -23,7 +23,19 @@
 
 .navbar__overlay {
   visibility: hidden;
-  transition: visibility 3s ease-out;
+  background-color: black;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity .3s ease-out;
+}
+
+.navbar__overlay_opened {
+  visibility: visible;
+  opacity: 0.4;
 }
 
 .navbar__menu-container {
@@ -56,7 +68,7 @@
 }
 
 .navbar__close-btn {
-  position: fixed;
+  position: absolute;
   padding: 0;
   right: 12px;
   top: 20px;
@@ -80,6 +92,10 @@
   font-size: 18px;
   padding-bottom: 7px;
   transition: opacity .3s ease-out;
+}
+
+.navbar__link_active {
+  opacity: .5;
 }
 
 .navbar__link:nth-last-child(2) {
@@ -113,18 +129,6 @@
   .navbar__menu-btn {
     width: 44px;
     height: 44px;
-  }
-
-  .navbar__overlay {
-    visibility: visible;
-    background-color: black;
-    opacity: 0.4;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    transition: visibility 3s ease-out;
   }
 
   .navbar__menu-container {
@@ -179,11 +183,6 @@
     top: auto;
     right: auto;
     padding: 0;
-  }
-
-  .navbar__overlay {
-    visibility: hidden;
-    transition: visibility 3s ease-out;
   }
 
   .navbar__menu-btn {

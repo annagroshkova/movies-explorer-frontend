@@ -5,7 +5,7 @@ import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { useEffect, useState } from 'react';
-import ProtectedRoute from '../ProtectedRoute';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { getToken, removeToken, saveToken } from '../../utils/storage';
 import { api } from '../../utils/api';
 import Home from "../Home/Home";
@@ -57,6 +57,7 @@ export default function App() {
           <Route path="/" element={<Main />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
           <Route
             path="/profile"
             element={<Profile />}
