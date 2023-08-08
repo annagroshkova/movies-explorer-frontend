@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
-import Home from '../Home/Home';
+import Main from '../Main/Main';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import ProtectedRoute from '../ProtectedRoute';
 import { getToken, removeToken, saveToken } from '../../utils/storage';
 import { api } from '../../utils/api';
-import Main from "../Main/Main";
+import Home from "../Home/Home";
 import Movies from "../Movies/Movies";
 import './App.css';
 
@@ -54,8 +54,11 @@ export default function App() {
     <div className="app">
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route
-            path="/"
+            path="/profile"
             element={<Profile />}
           />
           <Route

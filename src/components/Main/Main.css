@@ -1,4 +1,7 @@
-.main {
-  max-width: 1140px;
-  margin: 0 auto;
+@media screen and (max-width: 425px) {
+  .main {
+    margin: 0 auto;
+    padding-inline: 8px;
+  }
 }
+

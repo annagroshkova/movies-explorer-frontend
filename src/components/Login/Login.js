@@ -2,6 +2,8 @@ import React from "react"
 import Greeting from "../Greeting/Greeting";
 import Input from "../Input/Input";
 import SubmitButton from "../SubmitButton/SubmitButton";
+import "./Login.css"
+import {Link} from "react-router-dom";
 
 export default function Login() {
 
@@ -34,7 +36,7 @@ export default function Login() {
         </fieldset>
 
         <SubmitButton text="Войти" />
-        <p className="sign__text">Ещё не зарегистрированы? <a className="sign__link" href="/">Регистрация</a></p>
+        <p className="sign__text">Ещё не зарегистрированы? <Link className="sign__link" to="/register">Регистрация</Link></p>
 
       </form>
     </div>
