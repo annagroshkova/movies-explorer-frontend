@@ -48,7 +48,7 @@
 .not-found__link {
   align-self: end;
   cursor: pointer;
-  color: #EE3465;
+  color: #4285F4;
   text-decoration: none;
   font-weight: 400;
   font-size: 12px;
@@ -56,7 +56,7 @@
 }
 
 .not-found__link:hover {
-  color: #F06C9B;
+  color: #7eabf8;
 }
 
 @media screen and (min-width: 768px) {

@@ -95,7 +95,7 @@
 }
 
 .navbar__link_active {
-  opacity: .5;
+  border-bottom: 2px solid white;
 }
 
 .navbar__link:nth-last-child(2) {
