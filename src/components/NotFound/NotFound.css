@@ -8,10 +8,9 @@
   grid-template-rows: 1fr fit-content(100%) 1fr;
   grid-gap: 10px;
   grid-template-areas:
-  "."
-  "title"
-  "text"
-  ;
+    '.'
+    'title'
+    'text';
 }
 
 .not-found__title {
@@ -23,7 +22,6 @@
   text-align: center;
   max-width: 300px;
 }
-
 
 .not-found__text {
   grid-area: text;
@@ -48,11 +46,11 @@
 .not-found__link {
   align-self: end;
   cursor: pointer;
-  color: #4285F4;
+  color: #4285f4;
   text-decoration: none;
   font-weight: 400;
   font-size: 12px;
-  transition: color .3s ease-out;
+  transition: color 0.3s ease-out;
 }
 
 .not-found__link:hover {
@@ -72,7 +70,8 @@
     align-self: start;
   }
 
-  .not-found__subtitle, .not-found__link {
+  .not-found__subtitle,
+  .not-found__link {
     font-size: 16px;
   }
 }

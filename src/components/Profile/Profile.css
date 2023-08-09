@@ -86,13 +86,12 @@
   color: white;
 }
 
-
 .profile__button_type_edit:hover {
   color: #cccccc;
 }
 
 .profile__button_type_exit {
-  color: #EE3465;
+  color: #ee3465;
 }
 
 .profile__button_type_exit:hover {

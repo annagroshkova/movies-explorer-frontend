@@ -1,12 +1,12 @@
-import React from "react"
-import Checkbox from "../Checkbox/Checkbox";
-import "./SearchBar.css"
+import React from 'react';
+import Checkbox from '../Checkbox/Checkbox';
+import './SearchBar.css';
 
 export default function SearchBar() {
   return (
     <section className="search">
       <form className="search__form">
-        <input className="search__input" type="search" placeholder="Фильм"/>
+        <input className="search__input" type="search" placeholder="Фильм" />
         <button className="search__submit-btn">Найти</button>
       </form>
       <div className="search__checkbox-container">
@@ -14,5 +14,5 @@ export default function SearchBar() {
         <Checkbox />
       </div>
     </section>
-  )
+  );
 }

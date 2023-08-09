@@ -25,9 +25,7 @@
   font-weight: 500;
 }
 
-
-
-@media  screen and (min-width: 690px) {
+@media screen and (min-width: 690px) {
   .movies {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 36px 30px;
@@ -39,7 +37,7 @@
   }
 }
 
-@media  screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .movies {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px 24px;

@@ -3,10 +3,10 @@ import Main from '../Main/Main';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
-import Home from "../Home/Home";
+import Home from '../Home/Home';
 import './App.css';
-import Saved from "../Saved/Saved";
-import NotFound from "../NotFound/NotFound";
+import Saved from '../Saved/Saved';
+import NotFound from '../NotFound/NotFound';
 
 export default function App() {
   return (

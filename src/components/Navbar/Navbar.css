@@ -9,15 +9,15 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: opacity .3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .navbar__menu-btn:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
-
-.navbar__menu-icon, .navbar__close-icon {
+.navbar__menu-icon,
+.navbar__close-icon {
   object-fit: contain;
 }
 
@@ -30,7 +30,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  transition: opacity .3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .navbar__overlay_opened {
@@ -49,7 +49,7 @@
   margin: 0 auto;
   padding-inline: 18px;
   box-sizing: border-box;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar__menu-container_active {
@@ -77,11 +77,11 @@
   width: 44px;
   height: 44px;
   cursor: pointer;
-  transition: opacity .3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .navbar__close-btn:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .navbar__link {
@@ -91,7 +91,7 @@
   font-weight: 500;
   font-size: 18px;
   padding-bottom: 7px;
-  transition: opacity .3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .navbar__link_active {
@@ -103,7 +103,7 @@
 }
 
 .navbar__link:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .navbar__profile-link {
@@ -111,7 +111,6 @@
   gap: 17px;
   align-items: center;
 }
-
 
 .navbar__profile-text {
   margin: 0;
@@ -134,7 +133,6 @@
   .navbar__menu-container {
     width: 68%;
   }
-
 
   .navbar__links {
     padding: 160px 0 92px;
@@ -172,10 +170,7 @@
   }
 }
 
-
-
 @media screen and (min-width: 769px) {
-
   .navbar__menu-container {
     position: relative;
     width: unset;
@@ -207,5 +202,4 @@
   .navbar__profile-link {
     padding-left: 30px;
   }
-
 }
