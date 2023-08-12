@@ -7,11 +7,13 @@ import './Home.css';
 
 export default function Home() {
   return (
-    <div className="home">
+    <>
       <Header />
-      <SearchBar />
-      <Movies />
+      <main className="home">
+        <SearchBar />
+        <Movies canDelete={false} />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }

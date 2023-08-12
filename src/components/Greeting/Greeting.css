@@ -22,6 +22,7 @@
 
 @media screen and (min-width: 425px) {
   .greeting {
+    margin: 0;
     align-items: flex-start;
     padding-bottom: 40px;
     gap: 40px;

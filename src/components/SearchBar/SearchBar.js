@@ -6,7 +6,7 @@ export default function SearchBar() {
   return (
     <section className="search">
       <form className="search__form">
-        <input className="search__input" type="search" placeholder="Фильм" />
+        <input className="search__input" type="search" placeholder="Фильм" required/>
         <button className="search__submit-btn">Найти</button>
       </form>
       <div className="search__checkbox-container">

@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
 
-export default function Movies() {
+export default function Movies(props) {
   const cards = [
     {
       title: '33 слова о дизайне',
@@ -46,7 +46,7 @@ export default function Movies() {
     <>
       <section className="movies">
         {cards.map((card) => (
-          <MovieCard card={card} key={card.title} />
+          <MovieCard card={card} key={card.title} canDelete={props.canDelete} />
         ))}
       </section>
       <div className="movies__button-container">

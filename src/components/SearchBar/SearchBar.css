@@ -21,11 +21,16 @@
 }
 
 .search__input {
+  font-size: 12px;
   flex-grow: 5;
   background-color: transparent;
   border: none;
   color: white;
   outline: none;
+}
+
+.search__form:focus-within {
+  border-color: #b2b2b2;
 }
 
 .search__input::placeholder {
@@ -67,6 +72,10 @@
   .search {
     gap: 38px;
     padding-bottom: 56px;
+  }
+
+  .search__input {
+    font-size: 14px;
   }
 
   .search__input::placeholder {

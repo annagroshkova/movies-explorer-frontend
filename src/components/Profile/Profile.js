@@ -22,6 +22,7 @@ export default function Profile() {
               type="text"
               defaultValue="Анна"
               disabled={!edit}
+              required
             />
           </div>
 
@@ -38,6 +39,7 @@ export default function Profile() {
               type="email"
               defaultValue="anna.matvyeyenko@gmail.com"
               disabled={!edit}
+              required
             />
           </div>
         </form>

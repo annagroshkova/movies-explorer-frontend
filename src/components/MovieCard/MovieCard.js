@@ -1,9 +1,11 @@
 import React from 'react';
 import savedIcon from '../../images/movie_saved_icon.svg';
 import notSavedIcon from '../../images/movie_not-saved_icon.svg';
+import deleteIcon from '../../images/delete-icon.svg';
 import './MovieCard.css';
 
 export default function MovieCard(props) {
+
   const { card } = props;
   return (
     <div className="movie">
@@ -15,7 +17,7 @@ export default function MovieCard(props) {
         <button className="movie__save-button" type="button" aria-label="Сохранить">
           <img
             className="movie__save-icon"
-            src={card.isSaved ? savedIcon : notSavedIcon}
+            src={props.canDelete ? deleteIcon : card.isSaved ? savedIcon : notSavedIcon}
             alt="Иконка сохранить"
           />
         </button>

@@ -7,11 +7,13 @@ import './Saved.css';
 
 export default function Saved() {
   return (
-    <div className="saved">
+    <>
       <Header />
-      <SearchBar />
-      <Movies />
-      <Footer />
-    </div>
+      <main className="saved">
+        <SearchBar />
+        <Movies canDelete={true} />
+        <Footer />
+      </main>
+    </>
   );
 }

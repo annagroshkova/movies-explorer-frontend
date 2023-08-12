@@ -5,7 +5,8 @@ import closeIcon from '../../images/close-icon.svg';
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const isMain = props.theme === 'main'
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -20,23 +21,28 @@ export default function Navbar() {
       <button className="navbar__menu-btn" onClick={toggleOpen}>
         <img className="navbar__menu-icon" src={headerMenuIcon} alt="Иконка меню" />
       </button>
-      <div className={`navbar__overlay ${open ? 'navbar__overlay_opened' : ''}`}></div>
-      <div className={`navbar__menu-container ${open ? 'navbar__menu-container_active' : ''}`}>
+      <div className={`navbar__overlay
+      ${open ? 'navbar__overlay_opened' : ''}`}></div>
+      <div className={`navbar__menu-container
+      ${open ? 'navbar__menu-container_active' : ''}
+      ${isMain ? 'navbar__menu-container_theme_main' : ''}
+      `}>
         {open && (
           <button className="navbar__close-btn" onClick={toggleOpen}>
             <img className="navbar__close-icon" src={closeIcon} alt="Иконка крестик" />
           </button>
         )}
         <div className="navbar__links">
-          <NavLink className={navLinkClassName} to="/">
+          {open && <NavLink className={navLinkClassName} to="/">
             Главная
-          </NavLink>
+          </NavLink>}
           <NavLink className={navLinkClassName} to="/home">
             Фильмы
           </NavLink>
           <NavLink className={navLinkClassName} to="/saved">
             Сохранённые фильмы
           </NavLink>
+          <div className="navbar__spacer"></div>
           <NavLink
             className={(props) => `${navLinkClassName(props)} navbar__profile-link`}
             to="/profile"

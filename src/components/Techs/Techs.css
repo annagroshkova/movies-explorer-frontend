@@ -68,6 +68,13 @@
   }
 }
 
+@media screen and (min-width: 375px) {
+  .technologies {
+    width: calc(100% + 52px);
+    margin-left: -26px;
+  }
+}
+
 @media screen and (min-width: 426px) {
   .technologies {
     width: calc(100% + 60px);
