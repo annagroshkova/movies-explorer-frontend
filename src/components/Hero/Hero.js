@@ -8,18 +8,6 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero__container">
-        <div className="hero__header">
-          <img className="hero__logo" src={logo} alt="Логотип сайта" />
-          <div className="hero__links">
-            <NavLink className="hero__link hero__link_type_clear" to="/register">
-              Регистрация
-            </NavLink>
-            <NavLink className="hero__link hero__link_type_filled" to="/login">
-              Войти
-            </NavLink>
-          </div>
-        </div>
-
         <div className="hero__promo">
           <img className="hero__promo-image" src={promoImage} alt="Иллюстрация глобуса" />
           <div className="hero__info">

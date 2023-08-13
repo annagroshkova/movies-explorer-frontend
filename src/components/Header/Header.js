@@ -13,11 +13,11 @@ export default function Header(props) {
         <img className="greeting__logo" src={logo} alt="Логотип сайта" />
       </Link>
       {props.isLoged ? <Navbar theme={props.theme}/> : (
-        <div className="hero__links">
-          <NavLink className="hero__link hero__link_type_clear" to="/register">
+        <div className="header__links">
+          <NavLink className="header__link header__link_type_clear" to="/register">
             Регистрация
           </NavLink>
-          <NavLink className="hero__link hero__link_type_filled" to="/login">
+          <NavLink className="header__link header__link_type_filled" to="/login">
             Войти
           </NavLink>
         </div>
