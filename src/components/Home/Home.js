@@ -8,7 +8,7 @@ import './Home.css';
 export default function Home() {
   return (
     <>
-      <Header isLogged={true}/>
+      <Header isLogged={true} />
       <main className="home">
         <SearchBar />
         <Movies canDelete={false} />

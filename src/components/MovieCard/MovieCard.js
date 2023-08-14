@@ -5,7 +5,6 @@ import deleteIcon from '../../images/delete-icon.svg';
 import './MovieCard.css';
 
 export default function MovieCard(props) {
-
   const { card } = props;
   return (
     <div className="movie">

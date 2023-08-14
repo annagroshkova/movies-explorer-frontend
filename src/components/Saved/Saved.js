@@ -8,7 +8,7 @@ import './Saved.css';
 export default function Saved() {
   return (
     <>
-      <Header isLogged={true}/>
+      <Header isLogged={true} />
       <main className="saved">
         <SearchBar />
         <Movies canDelete={true} />

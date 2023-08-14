@@ -1,8 +1,6 @@
 import React from 'react';
-import logo from '../../images/logo.svg';
 import promoImage from '../../images/text__COLOR_landing-logo.svg';
 import './Hero.css';
-import { NavLink } from 'react-router-dom';
 
 export default function Hero() {
   return (
