@@ -1,4 +1,4 @@
-.movies {
+.movies__cards {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: auto;
@@ -26,7 +26,7 @@
 }
 
 @media screen and (min-width: 690px) {
-  .movies {
+  .movies__cards {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 36px 30px;
     padding-top: 80px;

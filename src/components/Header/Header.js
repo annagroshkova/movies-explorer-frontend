@@ -10,9 +10,9 @@ export default function Header(props) {
   return (
     <header className={`header ${props.theme ? `header_theme_${props.theme}` : ""}`}>
       <Link to="/">
-        <img className="greeting__logo" src={logo} alt="Логотип сайта" />
+        <img className="header__logo" src={logo} alt="Логотип сайта" />
       </Link>
-      {props.isLoged ? <Navbar theme={props.theme}/> : (
+      {props.isLogged ? <Navbar theme={props.theme}/> : (
         <div className="header__links">
           <NavLink className="header__link header__link_type_clear" to="/register">
             Регистрация

@@ -43,17 +43,17 @@ export default function Movies(props) {
   ];
 
   return (
-    <>
-      <section className="movies">
+    <section className="movies">
+      <div className="movies__cards">
         {cards.map((card) => (
           <MovieCard card={card} key={card.title} canDelete={props.canDelete} />
         ))}
-      </section>
+      </div>
       <div className="movies__button-container">
         <button className="movies__load-more-btn" type="button" aria-label="Загрузить ещё">
           Ещё
         </button>
       </div>
-    </>
+    </section>
   );
 }
