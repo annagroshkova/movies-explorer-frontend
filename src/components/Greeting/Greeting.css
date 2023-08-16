@@ -1,0 +1,30 @@
+.greeting {
+  padding-bottom: 80px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.greeting__logo {
+  width: 38px;
+  height: 38px;
+}
+
+.greeting__text {
+  color: white;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0;
+}
+
+@media screen and (min-width: 425px) {
+  .greeting {
+    margin: 0;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    gap: 40px;
+  }
+}
