@@ -1,56 +1,74 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
+import useBreakpoint from "../../hooks/useBreakpoint";
 
+/**
+ * @typedef {import("../../types").Movie} Movie
+ * @typedef {import("../../types").SearchParams} SearchParams
+ * @typedef {import("../../types").Breakpoints} Breakpoints
+ */
+
+/**
+ * @param {Breakpoints} b
+ * @returns {number} rows
+ */
+const rowsByBreakpoint = {
+  desktop: 2,
+  tablet: 2,
+  mobile: 1,
+}
+
+const colsByBreakpoint = {
+  desktop: 4,
+  tablet: 4,
+  mobile: 1,
+}
+
+/**
+ * @param {Movie[]} props.movies
+ * @param {SearchParams} props.searchParams
+ */
 export default function Movies(props) {
-  const cards = [
-    {
-      title: '33 слова о дизайне',
-      duration: '1ч 47м',
-      isSaved: false,
-      image: '/cards/movie_placeholder.jpg',
-    },
-    {
-      title: '34 слова о дизайне',
-      duration: '1ч 47м',
-      isSaved: true,
-      image: '/cards/movie_placeholder_1.jpg',
-    },
-    {
-      title: '35 слов о дизайне',
-      duration: '1ч 47м',
-      isSaved: false,
-      image: '/cards/movie_placeholder_2.jpg',
-    },
-    {
-      title: '36 слов о дизайне',
-      duration: '1ч 47м',
-      isSaved: false,
-      image: '/cards/movie_placeholder_3.jpg',
-    },
-    {
-      title: '37 слов о дизайне',
-      duration: '1ч 47м',
-      isSaved: true,
-      image: '/cards/movie_placeholder_4.jpg',
-    },
-    {
-      title: '38 слов о дизайне',
-      duration: '1ч 47м',
-      isSaved: true,
-      image: '/cards/movie_placeholder_5.jpg',
-    },
-  ];
+  const { movies, searchParams } = props
+
+  const [rows, setRows] = useState(1)
+  const breakpoint = useBreakpoint()
+
+  /**
+   * @returns {Movie[]}
+   */
+  function filteredMovies() {
+    const text = searchParams.text.toLowerCase()
+    if (!text) return []
+
+    return movies.filter((movie) => {
+      if (searchParams.shorts && movie.duration > 40) return false
+      if (!movie.nameRU.toLowerCase().includes(text)) return false
+      return true;
+    }).slice(0, movieCount())
+  }
+
+  function movieCount() {
+    // return rows * colsByBreakpoint[breakpoint]
+    return 500
+  }
+
+  function handleMore() {
+    setRows(rows => rows + rowsByBreakpoint[breakpoint])
+  }
 
   return (
     <section className="movies">
       <div className="movies__cards">
-        {cards.map((card) => (
-          <MovieCard card={card} key={card.title} canDelete={props.canDelete} />
+        {breakpoint}
+        {filteredMovies().map((movie) => (
+          <MovieCard movie={movie} key={movie.id} canDelete={false} />
         ))}
       </div>
       <div className="movies__button-container">
-        <button className="movies__load-more-btn" type="button" aria-label="Загрузить ещё">
+        <button className="movies__load-more-btn" type="button" aria-label="Загрузить ещё"
+          onClick={handleMore}>
           Ещё
         </button>
       </div>

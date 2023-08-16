@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import './Checkbox.css';
 
+/**
+ * @param {(checked: boolean) => any} props.onChange
+ */
 export default function Checkbox(props) {
   const [checked, setChecked] = useState(false);
 
-  const handleClick = () => {
-    setChecked(!checked);
-    // props.onChange?.(checked)
-  };
+  function handleClick() {
+    const newChecked = !checked;
+    setChecked(newChecked);
+    props.onChange(newChecked);
+  }
 
   return (
     <div>

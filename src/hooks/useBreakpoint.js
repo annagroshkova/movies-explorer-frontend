@@ -1,22 +1,30 @@
 import { useEffect, useState } from 'react';
 
-function getWindowDimensions() {
-  const width = window.innerWidth;
-  return width;
+/**
+ * @typedef {import("../types").Breakpoint} Breakpoint
+ */
+
+function getWidth() {
+  return window.innerWidth;
 }
 
+/**
+ *
+ * @returns {Breakpoint} breakpoint
+ */
 export default function useBreakpoint() {
-  const [breakpoint, setBreakpoint] = useState(getWindowDimensions());
+  const [width, setWidth] = useState(getWidth());
 
   useEffect(() => {
     function handleResize() {
-      setBreakpoint(getWindowDimensions());
+      setWidth(getWidth());
     }
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const isDesktop = breakpoint > 768;
-  return isDesktop;
+  if (width >= 1280) return 'desktop';
+  if (width >= 768) return 'tablet';
+  return 'mobile'
 }

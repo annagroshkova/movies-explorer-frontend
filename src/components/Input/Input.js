@@ -1,6 +1,15 @@
 import React from 'react';
 import './Input.css';
 
+/**
+ * @param {string} props.id
+ * @param {string} props.type
+ * @param {string} props.name
+ * @param {number} props.minLength
+ * @param {string} props.defaultValue
+ * @param {boolean} props.required
+ * @param {(value: string) => any} props.onChange
+ */
 export default function Input(props) {
   return (
     <div className="input">
