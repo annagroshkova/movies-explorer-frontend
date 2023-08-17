@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import Movies from '../Movies/Movies';
 import Footer from '../Footer/Footer';
 import './Home.css';
-import {moviesApi} from "../../utils/MoviesApi";
+import { moviesApi } from '../../utils/MoviesApi';
 
 /**
  * @typedef {import("../../types").Movie} Movie
@@ -12,25 +12,32 @@ import {moviesApi} from "../../utils/MoviesApi";
  */
 
 export default function Home() {
-  const [movies, setMovies] = useState(/** @type {Movie[]} */[]);
-  const [searchParams, setSearchParams] = useState(/** @type {SearchParams} */{
-    text: '',
-    shorts: false,
-  });
+  const [movies, setMovies] = useState(/** @type {Movie[]} */ []);
+  const [searchParams, setSearchParams] = useState(
+    /** @type {SearchParams} */
+    {
+      text: '',
+      shorts: false,
+    },
+  );
+
+  function handleSearchParamsChange(params) {
+    setSearchParams(params);
+  }
 
   useEffect(() => {
     async function fetchMovies() {
-      setMovies(await moviesApi.getMovies())
+      setMovies(await moviesApi.getMovies());
     }
 
-    void fetchMovies()
-  }, [])
+    void fetchMovies();
+  }, []);
 
   return (
     <>
-      <Header isLogged={true} />
+      <Header />
       <main className="home">
-        <SearchBar onChange={setSearchParams} />
+        <SearchBar onChange={handleSearchParamsChange} persist={true} />
         <Movies movies={movies} searchParams={searchParams} canDelete={false} />
       </main>
       <Footer />

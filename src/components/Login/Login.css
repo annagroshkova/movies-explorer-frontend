@@ -25,9 +25,12 @@
   color: white;
   font-size: 12px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .sign__submit-button:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .sign__fieldset {

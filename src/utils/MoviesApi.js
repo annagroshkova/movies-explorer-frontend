@@ -1,4 +1,3 @@
-
 class MoviesApi {
   /**
    * @param {{ baseUrl: string; headers: HeadersInit}} options

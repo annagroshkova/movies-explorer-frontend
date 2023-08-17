@@ -1,10 +1,10 @@
-export type GetMoviesResponse = Movie[]
+export type GetMoviesResponse = Movie[];
 
-export type Breakpoint = 'desktop' | 'tablet' | 'mobile'
+export type Breakpoint = 'desktop' | 'tablet' | 'mobile';
 
 export interface SearchParams {
-  text: string
-  shorts: boolean
+  text: string;
+  shorts: boolean;
 }
 
 export interface Movie {
@@ -19,18 +19,18 @@ export interface Movie {
   // "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
   // "created_at": "2020-11-23T14:12:21.376Z",
   // "updated_at": "2020-11-23T14:12:21.376Z",
-  id: number
-  nameRU: string
-  nameEN: string
-  director: string
-  country: string
-  year: string
-  duration: number
-  description: string
-  trailerLink: string
-  created_at: string
-  updated_at: string
-  image: MovieImage
+  id: number;
+  nameRU: string;
+  nameEN: string;
+  director: string;
+  country: string;
+  year: string;
+  duration: number;
+  description: string;
+  trailerLink: string;
+  created_at: string;
+  updated_at: string;
+  image: MovieImage;
 }
 
 export interface MovieImage {
@@ -51,26 +51,26 @@ export interface MovieImage {
   // "provider_metadata": null,
   // "created_at": "2020-11-23T14:11:57.313Z",
   // "updated_at": "2020-11-23T14:11:57.313Z"
-  id: number
-  name: string
-  alternativeText: string
-  caption: string
-  width: number
-  height: number
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
   formats: {
-    thumbnail?: MovieImageFormat
-    small?: MovieImageFormat
-  }
-  hash: string
-  ext: string
-  mime: string
-  size: number
-  url: string
-  previewUrl: string
-  provider: string
-  provider_metadata: string | null
-  created_at: string
-  updated_at: string
+    thumbnail?: MovieImageFormat;
+    small?: MovieImageFormat;
+  };
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl: string;
+  provider: string;
+  provider_metadata: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface MovieImageFormat {
@@ -82,48 +82,45 @@ export interface MovieImageFormat {
   // "size": 8.79,
   // "path": null,
   // "url": "/uploads/thumbnail_stones_in_exile_b2f1b8f4b7.jpeg"
-  hash: string
-  ext: string
-  mime: string
-  width: number
-  height: number
-  size: number
-  path: string | null
-  url: string
+  hash: string;
+  ext: string;
+  mime: string;
+  width: number;
+  height: number;
+  size: number;
+  path: string | null;
+  url: string;
 }
 
-
-export interface UserObject {
-  about: string;
-  avatar: string;
-  // cohort?: string;
-  name: string;
+export interface CurrentUser {
+  _id: string;
   email: string;
-  _id: string;
-}
-
-export interface CardObject {
-  createdAt: string;
-  // likes: UserObject[];
-  likes: string[];
-  link: string;
   name: string;
-  // owner: UserObject;
-  owner: string;
-  _id: string;
+  // about: string;
+  // avatar: string;
+  // // cohort?: string;
+  // name: string;
+  // email: string;
+  // _id: string;
 }
 
-export interface CardInput {
+export interface User {
+  email: string;
+  password: string;
   name: string;
-  link: string;
 }
 
-export interface Credentials {
+export interface LoginInput {
   email: string;
   password: string;
 }
 
-export interface SigninResponse {
+export interface ProfileInput {
+  name: string;
+  email: string;
+}
+
+export interface LoginResponse {
   token: string;
 }
 

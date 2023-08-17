@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
 import logo from '../../images/logo.svg';
 import './Header.css';
 import { Link, NavLink } from 'react-router-dom';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+
+/**
+ * @typedef {import("../../types").CurrentUser} CurrentUser
+ */
 
 export default function Header(props) {
-  // const isMain = props.theme === 'main';
+  const { theme = 'default' } = props;
+
+  const currentUser = useContext(CurrentUserContext);
 
   return (
-    <header className={`header ${props.theme ? `header_theme_${props.theme}` : ''}`}>
+    <header className={`header header_theme_${theme}`}>
       <Link to="/">
         <img className="header__logo" src={logo} alt="Логотип сайта" />
       </Link>
-      {props.isLogged ? (
-        <Navbar theme={props.theme} />
+      {currentUser ? (
+        <Navbar theme={theme} />
       ) : (
         <div className="header__links">
           <NavLink className="header__link header__link_type_clear" to="/register">

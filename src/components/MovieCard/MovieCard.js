@@ -4,7 +4,7 @@ import notSavedIcon from '../../images/movie_not-saved_icon.svg';
 import deleteIcon from '../../images/delete-icon.svg';
 import './MovieCard.css';
 
-const urlPrefix = 'https://api.nomoreparties.co/'
+const urlPrefix = 'https://api.nomoreparties.co/';
 
 /**
  * @typedef {import("../../types").Movie} Movie
@@ -14,7 +14,7 @@ const urlPrefix = 'https://api.nomoreparties.co/'
  * @param {Movie} props.movie
  */
 export default function MovieCard(props) {
-  const movie =  props.movie;
+  const movie = props.movie;
 
   return (
     <div className="movie">
@@ -32,7 +32,7 @@ export default function MovieCard(props) {
         </button>
       </div>
       <div className="movie__image-container">
-        <a href={movie.trailerLink} target="_blank">
+        <a href={movie.trailerLink} target="_blank" rel="noreferrer">
           <img className="movie__image" src={urlPrefix + movie.image.url} alt="Заставка к фильму" />
         </a>
       </div>
@@ -52,5 +52,4 @@ function formatDuration(duration) {
   }
 
   return `${minutes}м`;
-
 }
