@@ -6,7 +6,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier-all": "prettier --write .",
-    "lint-all": "prettier --write . && eslint . --fix && prettier --write .",
+    "lint-all": "prettier --write ./src && eslint ./src --fix && prettier --write ./src",
     "lint": "eslint . --fix"
   },
   "dependencies": {

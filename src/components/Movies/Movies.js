@@ -2,22 +2,13 @@ import React, { useState } from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
 import useMovieBreakpoint from '../../hooks/useMovieBreakpoint';
+import { ROWS_BY_COLUMNS, SHORT_MOVIE_DURATION } from '../../utils/constants';
 
 /**
  * @typedef {import("../../types").Movie} Movie
  * @typedef {import("../../types").SearchParams} SearchParams
  * @typedef {import("../../types").Breakpoints} Breakpoints
  */
-
-/**
- * @param {number} columns
- * @returns {number} rows
- */
-const rowsByColumns = {
-  3: 1,
-  2: 1,
-  1: 2,
-};
 
 /**
  * @param {Movie[]} props.movies
@@ -37,7 +28,7 @@ export default function Movies(props) {
     if (!text) return [];
 
     return movies.filter((movie) => {
-      if (searchParams.shorts && movie.duration > 40) return false;
+      if (searchParams.shorts && movie.duration > SHORT_MOVIE_DURATION) return false;
       if (!movie.nameRU.toLowerCase().includes(text) && !movie.nameEN.toLowerCase().includes(text))
         return false;
       return true;
@@ -57,7 +48,7 @@ export default function Movies(props) {
   }
 
   function handleMore() {
-    setRows((rows) => rows + rowsByColumns[columns]);
+    setRows((rows) => rows + ROWS_BY_COLUMNS[columns]);
   }
 
   return (

@@ -33,6 +33,8 @@ export default function App() {
       setToken(getToken());
     } catch (err) {
       console.error(err);
+      // wrong token should redirect to /login page
+      navigate('/login');
     }
   }
 
@@ -50,6 +52,7 @@ export default function App() {
   function handleLogout() {
     removeToken();
     setToken(null);
+    localStorage.clear();
     navigate('/');
     setCurrentUser(null);
   }
@@ -63,15 +66,35 @@ export default function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/register" element={<Register onRegister={handleRegister} />} />
-          <Route path="/login" element={<Login onLogin={handleLogin} />} />
-          <Route path="/home" element={<ProtectedRoute loggedIn={token} element={Home} />} />
-          <Route path="/saved" element={<ProtectedRoute loggedIn={token} element={Saved} />} />
+          <Route
+            path="/register"
+            element={
+              <ProtectedRoute
+                condition={!token}
+                redirectPath="/home"
+                element={Register}
+                onRegister={handleRegister}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <ProtectedRoute
+                condition={!token}
+                redirectPath="/home"
+                element={Login}
+                onLogin={handleLogin}
+              />
+            }
+          />
+          <Route path="/home" element={<ProtectedRoute condition={token} element={Home} />} />
+          <Route path="/saved" element={<ProtectedRoute condition={token} element={Saved} />} />
           <Route
             path="/profile"
             element={
               <ProtectedRoute
-                loggedIn={token}
+                condition={token}
                 element={Profile}
                 onLogout={handleLogout}
                 onProfileSave={handleProfileSave}

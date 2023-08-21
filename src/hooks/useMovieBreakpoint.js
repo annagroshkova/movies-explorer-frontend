@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../utils/constants';
 
 function getWidth() {
   return window.innerWidth;
@@ -20,7 +21,7 @@ export default function useMovieBreakpoint() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  if (width < 690) return 1;
-  if (width < 1024) return 2;
+  if (width < BREAKPOINT_MOBILE) return 1;
+  if (width < BREAKPOINT_TABLET) return 2;
   return 3;
 }

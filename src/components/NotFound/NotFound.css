@@ -44,6 +44,8 @@
 }
 
 .not-found__link {
+  background: none;
+  border: 0;
   align-self: end;
   cursor: pointer;
   color: #4285f4;

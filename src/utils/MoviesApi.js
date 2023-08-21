@@ -1,3 +1,10 @@
+/**
+ * @typedef {import("../types").Movie} Movie
+ */
+
+/** @type {Movie[] | null} */
+let loadedMovies = null;
+
 class MoviesApi {
   /**
    * @param {{ baseUrl: string; headers: HeadersInit}} options
@@ -31,8 +38,12 @@ class MoviesApi {
   /**
    * @returns {Promise<import("../types").GetMoviesResponse>}
    */
-  getMovies() {
-    return this._request(``);
+  async getMovies() {
+    if (!loadedMovies) {
+      // cache loaded movies
+      loadedMovies = await this._request(``);
+    }
+    return loadedMovies;
   }
 }
 
