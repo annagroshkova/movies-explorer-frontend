@@ -1,5 +1,5 @@
 /**
- * @typedef {import("../types").Movie} Movie
+ * @typedef {import("../types").BeatMovie} Movie
  */
 
 /** @type {Movie[] | null} */

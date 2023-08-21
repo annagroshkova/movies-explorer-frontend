@@ -19,6 +19,7 @@ export default function App() {
     /** @type {import("../../types").CurrentUser | null} */ null,
   );
   const [token, setToken] = useState(/** @type {string | null} */ getToken());
+  const [likedMovies, setLikedMovies] = useState([]);
 
   useEffect(() => {
     void getMyInfo();

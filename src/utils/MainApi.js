@@ -1,5 +1,14 @@
 import { getToken } from './storage';
 
+/**
+ * @typedef {import("../types").BeatMovie} BeatMovie
+ * @typedef {import("../types").ApiMovie} ApiMovie
+ * @typedef {import("../types").User} User
+ */
+
+/** @type {ApiMovie[] | null} */
+let likedMovies = null;
+
 class MainApi {
   /**
    * @param {{ baseUrl: string; headers: HeadersInit}} _options
@@ -34,6 +43,42 @@ class MainApi {
   }
 
   /**
+   * @returns {ApiMovie[]}
+   */
+  async getLikedMovies() {
+    if (!likedMovies) {
+      likedMovies = await this._request(`movies`, {
+        method: 'GET',
+      });
+    }
+
+    return likedMovies;
+  }
+
+  /**
+   * @param {number} id
+   * @returns {void}
+   */
+  async unlikeMovie(id) {
+    await this._request(`movies/${id}`, {
+      method: 'DELETE',
+    });
+    likedMovies = likedMovies.filter((m) => m.movieId !== id);
+  }
+
+  /**
+   * @param {any} input
+   * @returns {void}
+   */
+  async likeMovie(input) {
+    const newMovie = await this._request(`movies`, {
+      method: 'POST',
+      body: JSON.stringify(input),
+    });
+    likedMovies.push(newMovie);
+  }
+
+  /**
    * @returns {Promise<import("../types").User>}
    */
   getMe() {
@@ -44,7 +89,7 @@ class MainApi {
 
   /**
    * @param {import("../types").ProfileInput} input
-   * @returns {Promise<import("../types").User>}
+   * @returns {User}
    */
   patchMe(input) {
     return this._request(`users/me`, {
@@ -55,7 +100,7 @@ class MainApi {
 
   /**
    * @param {import("../types").User} input
-   * @returns {Promise<import("../types").User>}
+   * @returns {User}
    */
   signup(input) {
     return this._request(`signup`, {

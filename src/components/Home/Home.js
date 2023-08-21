@@ -7,7 +7,7 @@ import './Home.css';
 import { moviesApi } from '../../utils/MoviesApi';
 
 /**
- * @typedef {import("../../types").Movie} Movie
+ * @typedef {import("../../types").BeatMovie} Movie
  * @typedef {import("../../types").SearchParams} SearchParams
  */
 

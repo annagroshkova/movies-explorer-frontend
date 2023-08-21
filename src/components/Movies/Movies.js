@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
 import useMovieBreakpoint from '../../hooks/useMovieBreakpoint';
-import { ROWS_BY_COLUMNS, SHORT_MOVIE_DURATION } from '../../utils/constants';
+import { MOVIE_URL_PREFIX, ROWS_BY_COLUMNS, SHORT_MOVIE_DURATION } from '../../utils/constants';
+import { mainApi } from '../../utils/MainApi';
 
 /**
- * @typedef {import("../../types").Movie} Movie
+ * @typedef {import("../../types").BeatMovie} Movie
+ * @typedef {import("../../types").ApiMovie} ApiMovie
  * @typedef {import("../../types").SearchParams} SearchParams
  * @typedef {import("../../types").Breakpoints} Breakpoints
  */
 
 /**
- * @param {Movie[]} props.movies
+ * @param {BeatMovie[]} props.movies
  * @param {SearchParams} props.searchParams
  */
 export default function Movies(props) {
@@ -51,14 +53,37 @@ export default function Movies(props) {
     setRows((rows) => rows + ROWS_BY_COLUMNS[columns]);
   }
 
+  async function handleLike(movie) {
+    const { country, director, year, description, duration, nameEN, nameRU } = movie;
+
+    const thumbnail = MOVIE_URL_PREFIX + (movie.image.formats.thumbnail?.url || movie.image.url);
+
+    await mainApi.likeMovie(
+      /** @type {ApiMovie} */ {
+        country,
+        director,
+        duration,
+        year,
+        description,
+        nameRU,
+        nameEN,
+        movieId: movie.id,
+        image: MOVIE_URL_PREFIX + movie.image.url,
+        trailerLink: movie.trailerLink.split('?')[0], // todo
+        thumbnail,
+      },
+    );
+  }
+
   return (
     <section className="movies">
       <div className="movies__cards">
         {!filteredLimitedMovies().length && <p>Ничего не найдено</p>}
         {filteredLimitedMovies().map((movie) => (
-          <MovieCard movie={movie} key={movie.id} canDelete={false} />
+          <MovieCard movie={movie} key={movie.id} canDelete={false} onLike={handleLike} />
         ))}
       </div>
+
       {moreButtonVisible() && (
         <div className="movies__button-container">
           <button

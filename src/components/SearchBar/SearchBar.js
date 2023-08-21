@@ -29,10 +29,15 @@ export default function SearchBar(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const params = {
-      text,
-      shorts,
-    };
+    handleChange({ text, shorts });
+  }
+
+  function handleSetShorts(value) {
+    setShorts(value);
+    handleChange({ text, shorts: value });
+  }
+
+  function handleChange(params) {
     if (props.persist) {
       localStorage.setItem('searchParams', JSON.stringify(params));
     }
@@ -55,7 +60,7 @@ export default function SearchBar(props) {
 
       <div className="search__checkbox-container">
         <p className="search__checkbox-label">Короткометражки</p>
-        <Checkbox checked={shorts} onChange={setShorts} />
+        <Checkbox checked={shorts} onChange={handleSetShorts} />
       </div>
     </section>
   );

@@ -12,3 +12,5 @@ export const ROWS_BY_COLUMNS = {
 
 export const BREAKPOINT_MOBILE = 690;
 export const BREAKPOINT_TABLET = 1024;
+
+export const MOVIE_URL_PREFIX = 'https://api.nomoreparties.co/';

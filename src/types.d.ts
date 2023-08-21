@@ -1,4 +1,4 @@
-export type GetMoviesResponse = Movie[];
+export type GetMoviesResponse = BeatMovie[];
 
 export type Breakpoint = 'desktop' | 'tablet' | 'mobile';
 
@@ -7,7 +7,22 @@ export interface SearchParams {
   shorts: boolean;
 }
 
-export interface Movie {
+export interface ApiMovie {
+  _id: string; // mongo id
+  movieId: number;
+  country: string;
+  nameRU: string;
+  nameEN: string;
+  director: string;
+  year: string;
+  duration: number;
+  description: string;
+  image: string;
+  thumbnail: string;
+  trailerLink: string;
+}
+
+export interface BeatMovie {
   // "id": 1,
   // "nameRU": "«Роллинг Стоунз» в изгнании",
   // "nameEN": "Stones in Exile",

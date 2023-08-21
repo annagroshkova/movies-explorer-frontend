@@ -3,18 +3,28 @@ import savedIcon from '../../images/movie_saved_icon.svg';
 import notSavedIcon from '../../images/movie_not-saved_icon.svg';
 import deleteIcon from '../../images/delete-icon.svg';
 import './MovieCard.css';
-
-const urlPrefix = 'https://api.nomoreparties.co/';
+import { MOVIE_URL_PREFIX } from '../../utils/constants';
 
 /**
- * @typedef {import("../../types").Movie} Movie
+ * @typedef {import("../../types").BeatMovie} BeatMovie
+ * @typedef {import("../../types").ApiMovie} ApiMovie
  */
 
 /**
- * @param {Movie} props.movie
+ * @param {BeatMovie} props.movie
+ * @param {boolean} props.canDelete
+ * @param {(movie: BeatMovie) => any} props.onLike
  */
 export default function MovieCard(props) {
-  const movie = props.movie;
+  const { movie, canDelete } = props;
+
+  async function handleSaveDeleteClick() {
+    if (canDelete) {
+      // props.onDelete(movie);
+    } else {
+      props.onLike(movie);
+    }
+  }
 
   return (
     <div className="movie">
@@ -23,17 +33,26 @@ export default function MovieCard(props) {
           <h3 className="movie__title">{movie.nameRU}</h3>
           <p className="movie__duration">{formatDuration(movie.duration)}</p>
         </div>
-        <button className="movie__save-button" type="button" aria-label="Сохранить">
+        <button
+          className="movie__save-button"
+          type="button"
+          aria-label="Сохранить"
+          onClick={handleSaveDeleteClick}
+        >
           <img
             className="movie__save-icon"
-            src={props.canDelete ? deleteIcon : movie.isSaved ? savedIcon : notSavedIcon}
+            src={canDelete ? deleteIcon : movie.isSaved ? savedIcon : notSavedIcon}
             alt="Иконка сохранить"
           />
         </button>
       </div>
       <div className="movie__image-container">
         <a href={movie.trailerLink} target="_blank" rel="noreferrer">
-          <img className="movie__image" src={urlPrefix + movie.image.url} alt="Заставка к фильму" />
+          <img
+            className="movie__image"
+            src={MOVIE_URL_PREFIX + movie.image.url}
+            alt="Заставка к фильму"
+          />
         </a>
       </div>
     </div>
