@@ -14,3 +14,5 @@ export const BREAKPOINT_MOBILE = 690;
 export const BREAKPOINT_TABLET = 1024;
 
 export const MOVIE_URL_PREFIX = 'https://api.nomoreparties.co/';
+
+export const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;

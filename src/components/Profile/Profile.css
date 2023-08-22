@@ -92,8 +92,13 @@
   color: white;
 }
 
-.profile__button_type_edit:hover {
+.profile__button_type_edit:hover:not([disabled]) {
   color: #cccccc;
+}
+
+.profile__button_type_edit[disabled] {
+  color: #aaa;
+  cursor: default;
 }
 
 .profile__button_type_exit {

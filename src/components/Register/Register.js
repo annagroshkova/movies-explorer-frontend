@@ -12,6 +12,7 @@ import { saveToken } from '../../utils/storage';
  */
 
 export default function Register(props) {
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(
     /** @type {User} */ {
       name: '',
@@ -19,14 +20,18 @@ export default function Register(props) {
       password: '',
     },
   );
+  const [userError, setUserError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passError, setPassError] = useState('');
 
   function submitEnabled() {
-    return user.name && user.email && user.password;
+    return !loading && user.name && user.email && user.password && !userError && !emailError && !passError;
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
+      setLoading(true)
       const newUser = await mainApi.signup(user);
 
       const { token } = await mainApi.login({
@@ -39,6 +44,8 @@ export default function Register(props) {
       props.onRegister(newUser);
     } catch (err) {
       alert(err.message);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -54,7 +61,9 @@ export default function Register(props) {
             type="text"
             defaultValue={user.name}
             onChange={(name) => setUser({ ...user, name })}
+            onError={setUserError}
             required={true}
+            disabled={loading}
           />
 
           <Input
@@ -64,7 +73,9 @@ export default function Register(props) {
             type="email"
             defaultValue={user.email}
             onChange={(email) => setUser({ ...user, email })}
+            onError={setEmailError}
             required={true}
+            disabled={loading}
           />
 
           <Input
@@ -74,8 +85,10 @@ export default function Register(props) {
             type="password"
             defaultValue={user.password}
             onChange={(password) => setUser({ ...user, password })}
+            onError={setPassError}
             required={true}
             minLength={8}
+            disabled={loading}
           />
         </fieldset>
 

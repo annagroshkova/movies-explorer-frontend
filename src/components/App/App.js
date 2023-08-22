@@ -107,7 +107,7 @@ export default function App() {
         nameEN,
         movieId: movie.id,
         image: MOVIE_URL_PREFIX + movie.image.url,
-        trailerLink: movie.trailerLink.split('?')[0], // todo
+        trailerLink: movie.trailerLink,
         thumbnail,
       },
     );

@@ -18,15 +18,19 @@ export default function Login(props) {
       password: '',
     },
   );
+  const [emailError, setEmailError] = useState('');
+  const [passError, setPassError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   function submitEnabled() {
-    return user.email && user.password;
+    return !loading && user.email && user.password && !passError && !emailError;
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
+      setLoading(true)
       const { token } = await mainApi.login({
         email: user.email,
         password: user.password,
@@ -36,6 +40,8 @@ export default function Login(props) {
       props.onLogin();
     } catch (err) {
       alert(err.message);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -51,7 +57,9 @@ export default function Login(props) {
             type="email"
             defaultValue={user.email}
             onChange={(email) => setUser({ ...user, email })}
+            onError={setEmailError}
             required={true}
+            disabled={loading}
           />
 
           <Input
@@ -61,7 +69,10 @@ export default function Login(props) {
             type="password"
             defaultValue={user.password}
             onChange={(password) => setUser({ ...user, password })}
+            onError={setPassError}
             required={true}
+            minLength={8}
+            disabled={loading}
           />
         </fieldset>
 

@@ -6,6 +6,7 @@ import { mainApi } from '../../utils/MainApi';
 
 export default function Profile(props) {
   const user = useContext(CurrentUserContext);
+  const [loading, setLoading] = useState(false);
   const [editUser, setEditUser] = useState({ ...user });
   const [edit, setEdit] = useState(false);
 
@@ -22,6 +23,7 @@ export default function Profile(props) {
     }
 
     try {
+      setLoading(true);
       const newUser = await mainApi.patchMe({
         name: editUser.name,
         email: editUser.email,
@@ -31,11 +33,14 @@ export default function Profile(props) {
       alert('Сохранено!');
     } catch (err) {
       alert(err.message);
+    } finally {
+      setLoading(false);
     }
   }
 
   function submitEnabled() {
-    return !edit || (editUser.email && editUser.name);
+    if (loading) return false
+    return !edit || (editUser.email !== user.email || editUser.name !== user.name);
   }
 
   function handleLogout() {
@@ -59,7 +64,7 @@ export default function Profile(props) {
                 name="name"
                 type="text"
                 defaultValue={editUser.name}
-                disabled={!edit}
+                disabled={!edit || loading}
                 onChange={(e) => setEditUser({ ...editUser, name: e.target.value })}
                 required
               />
@@ -77,7 +82,7 @@ export default function Profile(props) {
                 name="email"
                 type="email"
                 defaultValue={editUser.email}
-                disabled={!edit}
+                disabled={!edit || loading}
                 onChange={(e) => setEditUser({ ...editUser, email: e.target.value })}
                 required
               />
@@ -96,6 +101,7 @@ export default function Profile(props) {
                 type="button"
                 className="profile__button profile__button_type_exit"
                 onClick={handleLogout}
+                disabled={loading}
               >
                 Выйти из аккаунта
               </button>
