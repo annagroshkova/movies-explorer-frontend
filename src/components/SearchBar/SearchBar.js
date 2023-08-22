@@ -41,7 +41,8 @@ export default function SearchBar(props) {
     if (props.persist) {
       localStorage.setItem('searchParams', JSON.stringify(params));
     }
-    props.onChange(params);
+
+    onChange(params);
   }
 
   return (
@@ -53,7 +54,6 @@ export default function SearchBar(props) {
           placeholder="Фильм"
           defaultValue={text}
           onChange={(e) => setText(e.target.value)}
-          required
         />
         <button className="search__submit-btn">Найти</button>
       </form>

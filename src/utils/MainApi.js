@@ -6,9 +6,6 @@ import { getToken } from './storage';
  * @typedef {import("../types").User} User
  */
 
-/** @type {ApiMovie[] | null} */
-let likedMovies = null;
-
 class MainApi {
   /**
    * @param {{ baseUrl: string; headers: HeadersInit}} _options
@@ -43,39 +40,33 @@ class MainApi {
   }
 
   /**
-   * @returns {ApiMovie[]}
+   * @returns {Promise<ApiMovie[]>}
    */
-  async getLikedMovies() {
-    if (!likedMovies) {
-      likedMovies = await this._request(`movies`, {
-        method: 'GET',
-      });
-    }
-
-    return likedMovies;
+  getLikedMovies() {
+    return this._request(`movies`, {
+      method: 'GET',
+    });
   }
 
   /**
-   * @param {number} id
-   * @returns {void}
+   * @param {string} id
+   * @returns {Promise<void>}
    */
   async unlikeMovie(id) {
     await this._request(`movies/${id}`, {
       method: 'DELETE',
     });
-    likedMovies = likedMovies.filter((m) => m.movieId !== id);
   }
 
   /**
    * @param {any} input
-   * @returns {void}
+   * @returns {Promise<ApiMovie>}
    */
   async likeMovie(input) {
-    const newMovie = await this._request(`movies`, {
+    return await this._request(`movies`, {
       method: 'POST',
       body: JSON.stringify(input),
     });
-    likedMovies.push(newMovie);
   }
 
   /**

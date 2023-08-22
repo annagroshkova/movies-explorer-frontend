@@ -6,8 +6,21 @@ import Footer from '../Footer/Footer';
 import './Saved.css';
 import { moviesApi } from '../../utils/MoviesApi';
 
-export default function Saved() {
-  const [movies, setMovies] = useState(/** @type {Movie[]} */ []);
+/**
+ * @typedef {import("../../types").BeatMovie} BeatMovie
+ * @typedef {import("../../types").ApiMovie} ApiMovie
+ * @typedef {import("../../types").SearchParams} SearchParams
+ */
+
+/**
+ * @param {BeatMovie[]} props.movies
+ * @param {number[]} props.likedMovies
+ * @param {(movieId: number) => any} props.onUnlike
+ * @param {() => any} props.onLoadMovies
+ */
+export default function Saved(props) {
+  const { movies, likedMovies, onUnlike, onLoadMovies } = props;
+
   const [searchParams, setSearchParams] = useState(
     /** @type {SearchParams} */
     {
@@ -18,22 +31,24 @@ export default function Saved() {
 
   function handleSearchParamsChange(params) {
     setSearchParams(params);
-  }
 
-  useEffect(() => {
-    async function fetchMovies() {
-      setMovies(await moviesApi.getMovies());
+    if (!movies.length) {
+      onLoadMovies();
     }
-
-    void fetchMovies();
-  }, []);
+  }
 
   return (
     <>
       <Header />
       <main className="saved">
         <SearchBar onChange={handleSearchParamsChange} persist={false} />
-        <Movies movies={movies} searchParams={searchParams} canDelete={true} />
+        <Movies
+          movies={movies}
+          likedMovies={likedMovies}
+          searchParams={searchParams}
+          mode="saved"
+          onUnlike={onUnlike}
+        />
         <Footer />
       </main>
     </>

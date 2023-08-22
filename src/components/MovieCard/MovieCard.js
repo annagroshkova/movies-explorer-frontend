@@ -12,19 +12,23 @@ import { MOVIE_URL_PREFIX } from '../../utils/constants';
 
 /**
  * @param {BeatMovie} props.movie
+ * @param {boolean} props.liked
  * @param {boolean} props.canDelete
  * @param {(movie: BeatMovie) => any} props.onLike
+ * @param {(movieId: number) => any} props.onUnlike
  */
 export default function MovieCard(props) {
-  const { movie, canDelete } = props;
+  const { movie, liked, canDelete, onLike, onUnlike } = props;
 
   async function handleSaveDeleteClick() {
-    if (canDelete) {
-      // props.onDelete(movie);
+    if (canDelete || liked) {
+      onUnlike(movie.id);
     } else {
-      props.onLike(movie);
+      onLike(movie);
     }
   }
+
+  const alt = canDelete || liked ? 'убрать из сохранённых' : 'сохранить';
 
   return (
     <div className="movie">
@@ -36,13 +40,14 @@ export default function MovieCard(props) {
         <button
           className="movie__save-button"
           type="button"
-          aria-label="Сохранить"
+          aria-label={alt}
+          title={alt}
           onClick={handleSaveDeleteClick}
         >
           <img
             className="movie__save-icon"
-            src={canDelete ? deleteIcon : movie.isSaved ? savedIcon : notSavedIcon}
-            alt="Иконка сохранить"
+            src={canDelete ? deleteIcon : liked ? savedIcon : notSavedIcon}
+            alt={alt}
           />
         </button>
       </div>
