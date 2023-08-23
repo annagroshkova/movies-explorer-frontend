@@ -23,8 +23,7 @@ import Preloader from '../Preloader/Preloader';
  * @param {(input: any) => any} props.onUnlike
  */
 export default function Movies(props) {
-  const { movies, likedMovies, searchParams, mode, isLoading, onLike, onUnlike } =
-    props;
+  const { movies, likedMovies, searchParams, mode, isLoading, onLike, onUnlike } = props;
   const isSavedMode = mode === 'saved';
 
   const [rows, setRows] = useState(4);

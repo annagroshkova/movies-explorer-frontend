@@ -39,8 +39,8 @@ export default function Profile(props) {
   }
 
   function submitEnabled() {
-    if (loading) return false
-    return !edit || (editUser.email !== user.email || editUser.name !== user.name);
+    if (loading) return false;
+    return !edit || editUser.email !== user.email || editUser.name !== user.name;
   }
 
   function handleLogout() {

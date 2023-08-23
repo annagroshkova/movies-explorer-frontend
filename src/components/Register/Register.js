@@ -25,13 +25,21 @@ export default function Register(props) {
   const [passError, setPassError] = useState('');
 
   function submitEnabled() {
-    return !loading && user.name && user.email && user.password && !userError && !emailError && !passError;
+    return (
+      !loading &&
+      user.name &&
+      user.email &&
+      user.password &&
+      !userError &&
+      !emailError &&
+      !passError
+    );
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      setLoading(true)
+      setLoading(true);
       const newUser = await mainApi.signup(user);
 
       const { token } = await mainApi.login({

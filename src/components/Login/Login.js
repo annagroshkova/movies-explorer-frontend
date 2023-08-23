@@ -30,7 +30,7 @@ export default function Login(props) {
     e.preventDefault();
 
     try {
-      setLoading(true)
+      setLoading(true);
       const { token } = await mainApi.login({
         email: user.email,
         password: user.password,

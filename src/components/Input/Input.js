@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Input.css';
-import {EMAIL_REGEX} from "../../utils/constants";
+import { EMAIL_REGEX } from '../../utils/constants';
 
 /**
  * @param {string} props.id
@@ -13,33 +13,35 @@ import {EMAIL_REGEX} from "../../utils/constants";
  * @param {(error: string | undefined) => any} props.onError
  */
 export default function Input(props) {
-  const { type, name, id, required, minLength, defaultValue, disabled } = props
-  const [value, setValue] = useState(props.defaultValue)
-  const [dirty, setDirty] = useState(false)
+  const { type, name, id, required, minLength, defaultValue, disabled } = props;
+  const [value, setValue] = useState(props.defaultValue);
+  const [dirty, setDirty] = useState(false);
 
   function error(value) {
     if (required && !value) {
-      return 'Это обязательное поле'
+      return 'Это обязательное поле';
     }
 
     if (type === 'email' && !EMAIL_REGEX.test(value)) {
-      return 'Введите корректный email'
+      return 'Введите корректный email';
     }
 
     if (minLength && value.length < minLength) {
-      return `Минимальная длина ${minLength} символов`
+      return `Минимальная длина ${minLength} символов`;
     }
   }
 
   function handleChange(newValue) {
+    let becameDirty = false;
     if (!dirty && newValue !== defaultValue) {
-      setDirty(true)
+      setDirty(true);
+      becameDirty = true;
     }
-    setValue(newValue)
+    setValue(newValue);
 
-    if (dirty) {
-      props.onChange(newValue)
-      props.onError(error(newValue))
+    if (dirty || becameDirty) {
+      props.onChange(newValue);
+      props.onError(error(newValue));
     }
   }
 
@@ -56,7 +58,7 @@ export default function Input(props) {
         name={name}
         minLength={minLength}
         defaultValue={defaultValue}
-        onChange={(e) => handleChange(e.target.value)}
+        onInput={(e) => handleChange(e.target.value)}
         required={required}
         disabled={disabled}
       />
