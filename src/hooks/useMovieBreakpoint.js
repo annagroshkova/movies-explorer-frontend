@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
-
-/**
- * @typedef {import("../types").Breakpoint} Breakpoint
- */
+import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../utils/constants';
 
 function getWidth() {
   return window.innerWidth;
@@ -10,9 +7,9 @@ function getWidth() {
 
 /**
  *
- * @returns {Breakpoint} breakpoint
+ * @returns {number} numberOfMoviesInTheRow
  */
-export default function useBreakpoint() {
+export default function useMovieBreakpoint() {
   const [width, setWidth] = useState(getWidth());
 
   useEffect(() => {
@@ -24,7 +21,7 @@ export default function useBreakpoint() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  if (width >= 1280) return 'desktop';
-  if (width >= 768) return 'tablet';
-  return 'mobile';
+  if (width < BREAKPOINT_MOBILE) return 1;
+  if (width < BREAKPOINT_TABLET) return 2;
+  return 3;
 }

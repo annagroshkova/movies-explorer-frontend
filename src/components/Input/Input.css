@@ -31,6 +31,10 @@
   color: #ee3465;
 }
 
+.input__field[disabled] {
+  color: #666;
+}
+
 .input__error {
   color: #ee3465;
   font-size: 10px;

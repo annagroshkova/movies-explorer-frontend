@@ -10,7 +10,7 @@ import Header from '../Header/Header';
 export default function Main() {
   return (
     <div className="main">
-      <Header theme="main" isLogged={false} />
+      <Header theme="main" />
       <Hero />
       <AboutProject />
       <Techs />

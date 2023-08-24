@@ -100,6 +100,7 @@
 
 .navbar__link_active {
   border-bottom: 2px solid white;
+  font-weight: 500;
 }
 
 .navbar__spacer {
@@ -205,6 +206,7 @@
 
   .navbar__link_active {
     border-bottom: none;
+    font-weight: 500;
   }
 
   .navbar__profile-link {

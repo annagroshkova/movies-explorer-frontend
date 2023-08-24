@@ -1,13 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Greeting from '../Greeting/Greeting';
 import Input from '../Input/Input';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import './Login.css';
 import { Link } from 'react-router-dom';
+import { mainApi } from '../../utils/MainApi';
+import { saveToken } from '../../utils/storage';
 
-export default function Login() {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+/**
+ * @typedef {import("../../types").LoginInput} LoginInput
+ */
+
+export default function Login(props) {
+  const [user, setUser] = useState(
+    /** @type {LoginInput} */ {
+      email: '',
+      password: '',
+    },
+  );
+  const [emailError, setEmailError] = useState('');
+  const [passError, setPassError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  function submitEnabled() {
+    return !loading && user.email && user.password && !passError && !emailError;
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      const { token } = await mainApi.login({
+        email: user.email,
+        password: user.password,
+      });
+      saveToken(token);
+
+      props.onLogin();
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="sign">
@@ -19,9 +55,11 @@ export default function Login() {
             id="email"
             name="email"
             type="email"
-            defaultValue={email}
-            onChange={setEmail}
+            defaultValue={user.email}
+            onChange={(email) => setUser({ ...user, email })}
+            onError={setEmailError}
             required={true}
+            disabled={loading}
           />
 
           <Input
@@ -29,13 +67,17 @@ export default function Login() {
             id="password"
             name="password"
             type="password"
-            defaultValue={password}
-            onChange={setPassword}
+            defaultValue={user.password}
+            onChange={(password) => setUser({ ...user, password })}
+            onError={setPassError}
             required={true}
+            minLength={8}
+            disabled={loading}
           />
         </fieldset>
 
-        <SubmitButton text="Войти" disabled={true} />
+        <SubmitButton text="Войти" disabled={!submitEnabled()} onClick={handleSubmit} />
+
         <p className="sign__text">
           Ещё не зарегистрированы?{' '}
           <Link className="sign__link" to="/register">
